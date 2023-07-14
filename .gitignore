@@ -1,0 +1,4 @@
+output/*
+!output/.gitkeep
+crawler
+coverage.out
