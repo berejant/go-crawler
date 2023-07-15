@@ -1,14 +1,14 @@
-[![Run Tests](https://github.com/berejant/crawler/actions/workflows/release.yaml/badge.svg)](https://github.com/berejant/crawler/actions/workflows/release.yaml)
-[![codecov](https://codecov.io/gh/berejant/crawler/branch/main/graph/badge.svg?token=XN92HPICNZ)](https://codecov.io/gh/berejant/crawler)
+[![Run Tests](https://github.com/berejant/go-crawler/actions/workflows/release.yaml/badge.svg)](https://github.com/berejant/go-crawler/actions/workflows/release.yaml)
+[![codecov](https://codecov.io/gh/berejant/go-crawler/branch/main/graph/badge.svg?token=pt1A4XNjiC)](https://codecov.io/gh/berejant/go-crawler)
 
 ### Run using image
 ```shell
 ## see version
-docker run --rm ghcr.io/berajant/crawler --version
-
+docker run --rm ghcr.io/berejant/go-crawler:main --version
+```
+```shell
 ## run crawler
-docker run -v "$(pwd)/output:/output" --rm ghcr.io/berajant/crawler run --threads 50 --limit 1000 https://www.spiegel.de/
-
+docker run -v "$(pwd)/output:/output" --rm ghcr.io/berejant/go-crawler:main run --threads 50 --limit 1000 https://www.spiegel.de/
 ```
 
 ### Build and run with Docker
