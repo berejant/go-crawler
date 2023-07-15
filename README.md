@@ -4,23 +4,23 @@
 ## Web crawler
 
 ### Features:
- - Multiple thread using Golang coroutines
- - No need any external Event queue (such as Beanstalk) to communicate between process. Use RAM instead of TCP-network with Event queue daemon. 
- - Very fast. Save 5000 pages in 1-2 minutes (depends on CPU and network).
- - Remember already discovered URL with [Fastcache](https://github.com/VictoriaMetrics/fastcache) (key-value storage). Doesn't process same page twice.
- - Ignore URL outside specific web-url (web-node).
+ - Multiple threads using Golang coroutines
+ - No need for any external Event queue (such as Beanstalk) to communicate between processes. Uses RAM instead of TCP-network with Event queue daemon. 
+ - Very fast. Save 5000 pages in 1-2 minutes (depending on CPU and network).
+ - Remember already discovered URL with [Fastcache](https://github.com/VictoriaMetrics/fastcache) (key-value storage). Doesn't process the same page twice.
+ - Ignore URL outside specific web-URL (web-node).
  - Use canonical URL (without search param after `?`)
- - Save html to folder `output`
+ - Save HTML to folder `output`
  - Configurable with CLI flags `--threads` and `--limit`
- - Could be run in Google Cloud Functions and AWS Lambda (just need update to in cloud context instead of CLI context)
+ - Could be run in Google Cloud Functions and AWS Lambda (just need an update to in cloud context instead of CLI context)
  - Use Abstract FileSystem [Afero](https://pkg.go.dev/github.com/spf13/afero) - it allow to use Google Cloud Storage or AWS S3.
 
-### Points to improve
+### To-do list
  - Accept relative URL in HTML links.
- - Can't work in distributed environment. Just one instance per website.
- - Filesystem I/O is bottleneck. Need to implement some memory cache layer.
+ - Can't work in a distributed environment. Just one instance per website.
+ - Filesystem I/O is the bottleneck. Need to implement some memory cache layer.
 
-### Run using image
+### Run using the image
 ```shell
 ## see version
 docker run --rm ghcr.io/berejant/go-crawler:main --version
