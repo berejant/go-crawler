@@ -22,7 +22,7 @@ FROM --platform=${BUILDPLATFORM:-linux/amd64}  alpine
 ENV TZ=Europe/Kyiv
 RUN apk add tzdata
 
-RUN mkdir /output && chmod 777 -R /output && chown nobody:nobody /output
+RUN mkdir /output && chmod 777 -R /output
 
 COPY --from=builder /etc/passwd.nobody /etc/passwd
 COPY --from=builder /crawler /crawler
