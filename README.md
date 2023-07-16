@@ -17,6 +17,7 @@
 
 ### To-do list
  - Accept relative URL in HTML links.
+ - Add test cases to reach 95% code coverage.
  - Can't work in a distributed environment. Just one instance per website.
  - Filesystem I/O is the bottleneck. Need to implement some memory cache layer.
 
